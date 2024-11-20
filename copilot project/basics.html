@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本構文 - C++ 基礎知識</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <header>
+        <h1>基本構文</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="basics.html">基本構文</a></li>
+                <li><a href="functions.html">関数</a></li>
+                <li><a href="oop.html">オブジェクト指向</a></li>
+                <li><a href="standard_library.html">標準ライブラリ</a></li>
+                <li><a href="advanced_topics.html">高度なトピック</a></li>
+                <li><a href="return_values.html">関数の戻り値</a></li>
+                <li><a href="resources.html">参考資料</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>出力</h2>
+            <p>C++では、標準出力ストリームを使ってコンソールにメッセージを表示します。以下は出力の基本的な例です：</p>
+            <pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() {
+    std::cout << "Hello, World!" << std::endl;
+    return 0;
+}</code></pre>
+            <p>この例では、`std::cout`を使って文字列「Hello, World!」をコンソールに出力しています。`std::endl`は改行を意味します。</p>
+        </section>
+        <section>
+            <h2>変数とデータ型</h2>
+            <p>C++では、変数を使ってデータを保存します。以下は基本的なデータ型の例です：</p>
+            <pre><code class="language-cpp">int number = 10;
+float decimal = 3.14;
+char letter = 'A';
+std::string text = "Hello, World!";</code></pre>
+<p>整数(int)<br>
+    浮動小数点数(double・float)<br>
+    文字・文字列(char)<br>
+    文字列(string)<br></p>
+        </section>
+        <section>
+            <h2>コメント</h2>
+            <p>コメントは、コードに説明やメモを追加するために使用します。コンパイラはコメントを無視します。以下はコメントの例です：</p>
+            <pre><code class="language-cpp">// これはシングルラインコメントです
+/*
+  これは
+  マルチラインコメントです
+*/</code></pre>
+        </section>
+        <section>
+            <h2>制御文</h2>
+            <p>制御文を使って、プログラムの流れを制御します。以下はif文の例です：</p>
+            <pre><code class="language-cpp">if (number > 5) {
+    std::cout << "Number is greater than 5";
+} else {
+    std::cout << "Number is 5 or less";
+}</code></pre>
+            <h3>while文</h3>
+            <p>while文は、条件が真である間、繰り返し処理を行います。以下はwhile文の例です：</p>
+            <pre><code class="language-cpp">int count = 0;
+while (count < 5) {
+    std::cout << "Count: " << count << std::endl;
+    count++;
+}</code></pre>
+            <h3>do while文</h3>
+            <p>do while文は、少なくとも一度は処理を実行し、その後条件が真である間、繰り返し処理を行います。以下はdo while文の例です：</p>
+            <pre><code class="language-cpp">int count = 0;
+do {
+    std::cout << "Count: " << count << std::endl;
+    count++;
+} while (count < 5);</code></pre>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 C++ 基礎知識サイト</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+</body>
+</html>

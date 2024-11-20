@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高度なトピック - C++ 基礎知識</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <header>
+        <h1>高度なトピック</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="basics.html">基本構文</a></li>
+                <li><a href="functions.html">関数</a></li>
+                <li><a href="oop.html">オブジェクト指向</a></li>
+                <li><a href="standard_library.html">標準ライブラリ</a></li>
+                <li><a href="advanced_topics.html">高度なトピック</a></li>
+                <li><a href="return_values.html">関数の戻り値</a></li>
+                <li><a href="resources.html">参考資料</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="advanced-topics">
+            <h2>ポインタ</h2>
+            <p>ポインタは、メモリのアドレスを扱うための変数です。以下はポインタの基本的な例です：</p>
+            <pre><code class="language-cpp">int main() {
+    int value = 42;
+    int* ptr = &value; // ポインタptrはvalueのアドレスを指す
+    std::cout << "Value: " << value << std::endl;
+    std::cout << "Pointer: " << ptr << std::endl;
+    std::cout << "Dereferenced Pointer: " << *ptr << std::endl; // ポインタをデリファレンスして値を取得
+    return 0;
+}</code></pre>
+            <h3>ゲームのメモリ操作におけるポインタの応用　(わかりやすい例)</h3>
+            <p>ゲームではポインタを使ってゲームのメモリを操作することがあります。例えば、ゲーム内のキャラクターの位置やスコアなどのデータはメモリ上に保存されています。ポインタを使ってこれらのメモリアドレスを直接操作することで、ゲームの動作を変更することができます。</p>
+            <p>以下は、ゲームのメモリ操作に関連するポインタの概念の例です：</p>
+            <pre><code class="language-cpp">int main() {
+    int health = 100; // ゲーム内のキャラクターの体力
+    int* healthPtr = &health; // 体力のメモリアドレスを指すポインタ
+
+    std::cout << "Initial Health: " << health << std::endl;
+
+    // ポインタを使って体力を変更
+    *healthPtr = 200;
+    std::cout << "Modified Health: " << health << std::endl;
+
+    return 0;
+}</code></pre>
+            <p>この例では、ポインタを使ってキャラクターの体力を直接変更しています。このような技術は、ゲームのデバッグや開発においても使用されますが、ハッキングやチート行為は違法であり、倫理的にも問題がありますので注意が必要です。</p>
+            <h2>関数のオーバーロード</h2>
+            <p>関数のオーバーロードは、同じ名前の関数を異なる引数リストで定義することです。以下は関数オーバーロードの例です：</p>
+            <pre><code class="language-cpp">void print(int i) {
+    std::cout << "整数: " << i << std::endl;
+}
+
+void print(double d) {
+    std::cout << "浮動小数点数: " << d << std::endl;
+}
+
+void print(std::string s) {
+    std::cout << "文字列: " << s << std::endl;
+}
+
+int main() {
+    print(42);        // 整数を出力
+    print(3.14);      // 浮動小数点数を出力
+    print("Hello");   // 文字列を出力
+    return 0;
+}</code></pre>
+            <h2>関数のオーバーライド</h2>
+            <p>関数のオーバーライドは、派生クラスで基底クラスの関数を再定義することです。以下は関数オーバーライドの例です：</p>
+            <pre><code class="language-cpp">class Base {
+public:
+    virtual void show() {
+        std::cout << "Base class" << std::endl;
+    }
+};
+
+class Derived : public Base {
+public:
+    void show() override { // 基底クラスのshow関数をオーバーライド
+        std::cout << "Derived class" << std::endl;
+    }
+};
+
+int main() {
+    Base* basePtr;
+    Derived derivedObj;
+    basePtr = &derivedObj;
+
+    basePtr->show(); // Derived classが出力される
+    return 0;
+}</code></pre>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 C++ 基礎知識サイト</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+</body>
+</html>

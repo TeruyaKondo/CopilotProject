@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>関数の戻り値 - C++ 基礎知識</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <header>
+        <h1>関数の戻り値</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="basics.html">基本構文</a></li>
+                <li><a href="functions.html">関数</a></li>
+                <li><a href="oop.html">オブジェクト指向</a></li>
+                <li><a href="standard_library.html">標準ライブラリ</a></li>
+                <li><a href="advanced_topics.html">高度なトピック</a></li>
+                <li><a href="return_values.html">関数の戻り値</a></li>
+                <li><a href="resources.html">参考資料</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="return-values">
+            <h2>基本的な戻り値</h2>
+            <p>関数は、計算結果や処理結果を呼び出し元に返すために戻り値を使用します。以下は基本的な戻り値の例です：</p>
+            <pre><code class="language-cpp">int add(int a, int b) {
+    return a + b; // aとbの合計を返す
+}
+
+int main() {
+    int result = add(5, 3);
+    std::cout << "Result: " << result << std::endl; // Result: 8
+    return 0;
+}</code></pre>
+            <h2>高度な戻り値</h2>
+            <p>関数は、オブジェクトやポインタを戻り値として返すこともできます。以下はオブジェクトを戻り値として返す例です：</p>
+            <pre><code class="language-cpp">class Complex {
+public:
+    double real, imag;
+
+    Complex(double r, double i) : real(r), imag(i) {}
+
+    Complex add(const Complex& other) {
+        return Complex(real + other.real, imag + other.imag); // 新しいComplexオブジェクトを返す
+    }
+};
+
+int main() {
+    Complex c1(1.0, 2.0);
+    Complex c2(2.5, 3.5);
+    Complex result = c1.add(c2);
+
+    std::cout << "Result: " << result.real << " + " << result.imag << "i" << std::endl; // Result: 3.5 + 5.5i
+    return 0;
+}</code></pre>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 C++ 基礎知識サイト</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+</body>
+</html>
